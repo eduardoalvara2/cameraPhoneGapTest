@@ -1,3 +1,0 @@
-# cameraPhoneGapTest
-# phoneGapCameraTest
-# phoneGapCameraTest
