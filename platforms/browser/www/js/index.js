@@ -12,6 +12,7 @@
           },
  
           sendPhoto: function() {
+
               alert('Imagen enviada al servidor');
           },
  
@@ -28,8 +29,8 @@
  
             photo.src = "data:image/jpeg;base64," + imageData;
  
-            var sendPhoto = document.getElementById('sendPhoto');
-            sendPhoto.style.display = 'block';
+            var sendPhotoBtn = document.getElementById('sendPhoto');
+            sendPhotoBtn.style.display = 'block';
             
           },
  
