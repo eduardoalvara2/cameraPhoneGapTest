@@ -9,10 +9,19 @@
     "installed_plugins": {
         "cordova-plugin-camera": {
             "PACKAGE_NAME": "com.coderhub.cameraexample"
+        },
+        "phonegap-plugin-mobile-accessibility": {
+            "PACKAGE_NAME": "com.coderhub.cameraexample"
         }
     },
     "dependent_plugins": {
         "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.coderhub.cameraexample"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.coderhub.cameraexample"
+        },
+        "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.coderhub.cameraexample"
         }
     }

@@ -2,6 +2,24 @@
  
           initialize: function() {
               this.bindEvents();
+              // Call onDeviceReady when PhoneGap is loaded.
+              //
+              // At this point, the document has loaded but phonegap-1.0.0.js has not.
+              // When PhoneGap is loaded and talking with the native device,
+              // it will call the event `deviceready`.
+              // 
+              document.addEventListener("deviceready", app.onDeviceReady, false);
+
+              
+          },
+            // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
+              //
+         onDeviceReady: function () {
+              // Now safe to use the PhoneGap API
+              if(window.MobileAccessibility){
+                window.MobileAccessibility.usePreferredTextZoom(false);
+              }
+              alert('ok');
           },
          
           bindEvents: function() {
