@@ -19,7 +19,7 @@
               if(window.MobileAccessibility){
                 window.MobileAccessibility.usePreferredTextZoom(false);
               }
-              alert('ok');
+              // alert('ok');
           },
          
           bindEvents: function() {
