@@ -19,4 +19,5 @@
     <preference name="phonegap-version" value="3.0.0" /> 
 
     <gap:plugin name="org.apache.cordova.core.camera" />
+    <allow-navigation href="http://45.79.65.249*" />
 </widget>

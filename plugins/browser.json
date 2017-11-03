@@ -12,6 +12,9 @@
         },
         "phonegap-plugin-mobile-accessibility": {
             "PACKAGE_NAME": "com.coderhub.cameraexample"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.coderhub.cameraexample"
         }
     },
     "dependent_plugins": {

@@ -91,7 +91,8 @@ module.exports.metadata =
     "cordova-plugin-camera": "2.4.1",
     "phonegap-plugin-mobile-accessibility": "1.0.5-dev",
     "cordova-plugin-device": "1.1.7-dev",
-    "cordova-plugin-network-information": "1.3.4-dev"
+    "cordova-plugin-network-information": "1.3.4-dev",
+    "cordova-plugin-whitelist": "1.3.2"
 }
 // BOTTOM OF METADATA
 });
