@@ -33,33 +33,47 @@
 
     sendPhoto: function() {
 
-        console.log('Imagen enviándose al servidor');
+        $('#statusMessage').html('Imagen enviándose al servidor');
 
-        var myJsonMethod = function (response){
-          console.log (response);
-        }
+        // $.ajax({
+        //     url: 'http://45.79.65.249/cameraexample.php',
+        //     // url: 'http://localhost/cameraexample.php',
+        //     dataType: 'jsonp',
+        //     data: {img:app.imageData},
+        //     jsonp: 'jsonpcallback',
+        //     timeout: 5000,
+        //     complete: function(response,status){
+        //         $('#statusMessage').html($('#statusMessage').html()+"."+"complete"); 
+        //         //console.log(JSON.stringify(response,false,2)); 
+        //         //console.log(status); 
+        //     },
+        //     error: function(xhr, status, exception){
+        //         console.log(xhr);
+        //         $('#statusMessage').html($('#statusMessage').html()+"."+"error");
+        //         $('#statusMessage').html($('#statusMessage').html()+"."+JSON.stringify(xhr,false,2));
+        //     },
+        //     success: function(data){
+        //         $('#statusMessage').html($('#statusMessage').html()+"."+"success"); 
+        //     }
+        // });
 
-        $.ajax({
-            url: 'http://45.79.65.249/cameraexample.php',
-            // url: 'http://localhost/cameraexample.php',
-            dataType: 'jsonp',
-            data: {img:app.imageData},
-            jsonp: 'jsonp',
-            jsonpCallback: "myJsonMethod",
-            timeout: 5000,
-            complete: function(response,status){
-                console.log("complete"); 
-                //console.log(JSON.stringify(response,false,2)); 
-                //console.log(status); 
+        $.ajax({       
+            url  : 'http://45.79.65.249/cameraexample.php',
+            type : 'POST',   
+            data : JSON.stringify({img:app.imageData}),
+            dataType : 'json',
+            contentType: "application/json",
+            headers : {"Content-Type" : "application/json; charset=utf-8"},
+            timeout  : 5000,
+            success : function(data) {       
+                $('#statusMessage').html(data['message']);
+                $('#statusMessage').html($('#statusMessage').html()+'<br><a href="'+data['path']+'" target="_blank">'+data['path']+'</a>');
             },
-            error: function(xhr, status, exception){
-                console.log(xhr);
-                console.log("error");
-                console.log(JSON.stringify(xhr,false,2));
-            },
-            success: function(data){
-                console.log("success"); 
-            }
+            error : function(xhr, type) { 
+                $('#statusMessage').html("Error");
+                $('#statusMessage').html($('#statusMessage').html()+"."+JSON.stringify(xhr,false,2));
+
+            }  
         });
 
     },
