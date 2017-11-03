@@ -97,11 +97,12 @@
 
 
         var photo = document.getElementById('photo');
-        photo.style.display = 'block';
         photo.src = "data:image/jpeg;base64," + imageData;
+        $('#statusMessage').html(imageData);
+        // photo.style.display = 'block';
 
-        var sendPhotoBtn = document.getElementById('sendPhoto');
-        sendPhotoBtn.style.display = 'block';
+        // var sendPhotoBtn = document.getElementById('sendPhoto');
+        // sendPhotoBtn.style.display = 'block';
 
         app.imageData = imageData;
     },
